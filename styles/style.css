@@ -177,63 +177,55 @@ header {
 }
   
 /* Write your CSS below */
-/* Media query for screens smaller than 760px (Mobile view) */
+/* Iteration 1 - Mobile Screens (width < 760px) */
 @media (max-width: 760px) {
-  /* Navbar styles */
-  nav ul {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; /* Align items to the left */
-      padding: 0;
-      margin: 0;
+
+  /* Navbar vertical */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
   }
 
-  nav ul li {
-      width: 100%; /* Make each nav item take full width */
-      text-align: left; /* Align the text to the left */
-      padding: 10px 0; /* Add some padding for spacing */
-      border-bottom: 1px solid #ccc; /* Optional: to separate the items */
+  .navbar li {
+    width: 100%;  /* Hacer que cada elemento ocupe el 100% del ancho */
+    border-right: none;  /* Eliminar las líneas divisorias laterales */
+    border-bottom: 1px solid #fff; /* Agregar una línea divisoria inferior */
   }
 
-  /* Article section styles */
-  .articles {
-      display: flex;
-      flex-direction: column;
+  .navbar li:last-child {
+    border-bottom: none;  /* Eliminar la línea divisoria del último elemento */
   }
 
-  .articles article {
-      width: 100%; /* Ensure articles take full width */
-      margin-bottom: 20px; /* Add some margin between articles */
+  /* Artículos en columna */
+  .main-article, .articles-container {
+    flex-direction: column;  /* Disponer los artículos en columna */
   }
 
-  /* Main article styles */
   .main-article {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Center the article content */
+    padding: 10px;
   }
 
-  .main-article img {
-      width: 100%; /* Image takes full width of container */
-      height: auto; /* Maintain aspect ratio */
+  .main-article .image, .main-article .content {
+    width: 100%;  /* Asegurar que la imagen y el contenido ocupen el 100% del ancho */
+    padding: 0;  /* Eliminar el padding */
   }
 
-  .main-article h1 {
-      margin-top: 15px; /* Add spacing after the image */
-      font-size: 1.5em; /* Adjust title font size for mobile */
+  .articles-container {
+    align-items: stretch;  /* Asegurar que los artículos se estiren al 100% del contenedor */
   }
 
-  .main-article p {
-      margin-top: 10px; /* Spacing between paragraphs and content */
-      font-size: 1em; /* Adjust font size for better readability */
-      text-align: justify; /* Optional: text alignment */
+  .article {
+    width: 100%;  /* Cada artículo ocupa el ancho completo */
+    margin-bottom: 20px;  /* Añadir margen entre los artículos */
   }
 
-  .main-article .read-more {
-      margin-top: 15px;
-      padding: 10px 20px;
-      font-size: 1em; /* Adjust button size */
-      text-align: center;
-      display: inline-block; /* Ensures the button isn't stretched */
+  /* Cambiar el orden en el main-article */
+  .main-article {
+    display: flex;
+    flex-direction: column; /* Mostrar la imagen primero y luego el texto */
+  }
+
+  .btn {
+    align-self: flex-start;  /* Alinear el botón al inicio del contenedor */
   }
 }
